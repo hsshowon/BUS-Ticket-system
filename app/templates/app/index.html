@@ -1,0 +1,370 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind + daisy ui added -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- using external css file -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <style>
+        .inter-font {
+            font-family: "Inter", sans-serif;
+        }
+
+        .releway-font {
+            font-family: "Raleway", sans-serif;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nav-bus': 'rgb(29, 209, 0)',
+                        'nav-bus-bg': 'rgba(29, 209, 0, 0.1)',
+                        'nav-bus-border': 'rgba(29, 209, 0, 0.4)',
+                        'button-text': 'rgb(3, 7, 18)',
+                        'cupon-col1': 'rgb(255, 191, 15)',
+                        'cupon-col2': 'rgb(247, 140, 156)',
+                        'main-part': 'rgb(247, 248, 248)',
+                        'dottet-border': 'rgba(3, 7, 18, 0.3)',
+                        'common-btn-bg': 'rgba(3, 7, 18, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <title>Online Bus Ticket</title>
+</head>
+
+<body class="releway-font">
+
+    <!-- header section start -->
+    <header class="w-[1171px] mx-auto">
+
+        <!-- navbar start-->
+        <nav class="mt-10">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-medium text-[18px]">
+                            <li><a>Home</a></li>
+                            <li><a>About</a></li>
+                            <li><a>Destination</a></li>
+                            <li><a>Search</a></li>
+
+                        </ul>
+                    </div>
+                    <a class="font-extrabold text-4xl">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 font-medium text-[18px]">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Destination</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn font-bold text-xl text-nav-bus bg-nav-bus-bg border-[1px] border-nav-bus-border px-6">Bus
+                        <img src="{% static 'image/bus-icon.png' %}" alt=""></a>
+                </div>
+            </div>
+        </nav>
+        <!-- navbar end -->
+
+
+        <!-- banner section start -->
+        <section class="h-[550px] bg-[url('{% static 'image/banner.png' %}')] bg-no-repeat mt-7 text-center text-white">
+
+            <h1 class="font-extrabold text-[64px] pt-[70px]">End-to-End Travel with <br><span class="text-nav-bus">P
+                    Paribahan</span>
+            </h1>
+            <p class="pb-8 inter-font text-lg font-normal">Experience the joy of travel with our comfortable and reliable bus service, offering <br> scenic routes and unforgettable journeys.
+            </p>
+            <button onclick="scrol()" class="btn bg-nav-bus border-none px-8 font-bold text-[18px] text-button-text">Buy
+                Tickets</button>
+
+        </section>
+        <!-- banner section end -->
+
+    </header>
+    <!-- header section end -->
+
+
+    <!-- Main section start -->
+    <main>
+
+        <!-- Best offer for you section start-->
+        <section class="my-[110px] w-[1171px] mx-auto text-center">
+            <h1 class="font-bold text-[40px] text-button-text">Best offers for you</h1>
+
+            <!-- coupon part start-->
+            <div class="flex gap-6 mt-12">
+
+                <!-- 15% off coupon start-->
+                <div class="h-[180px] bg-cupon-col1 w-full rounded-3xl flex">
+
+                    <div class="inter-font space-y-1 px-14 pt-7">
+                        <h1 class="text-[40px] font-extrabold">15% OFF</h1>
+                        <h5 class="font-semibold text-xl">on your next purchase</h5>
+                        <p class="font-medium text-base">use by January 2024</p>
+                    </div>
+
+                    <img class="h-full" src="{% static 'image/cupon-devider.png' %}" alt="">
+
+                    <div class="pl-6 pt-14">
+                        <h1 class="text-3xl font-bold">NEW15</h1>
+                        <p class="text-base font-medium">Coupon Code</p>
+                    </div>
+                </div>
+                <!-- 15% off coupon end -->
+
+                <!-- 20% off coupon end-->
+                <div class="h-[180px] bg-cupon-col2 w-full rounded-3xl flex">
+
+                    <div class="inter-font space-y-1 px-14 pt-7">
+                        <h1 class="text-[40px] font-extrabold">20% OFF</h1>
+                        <h5 class="font-semibold text-xl">on your next purchase</h5>
+                        <p class="font-medium text-base">use by January 2024</p>
+                    </div>
+
+                    <img class="h-full" src="{% static 'image/cupon-devider.png' %}" alt="">
+
+                    <div class="pl-6 pt-14">
+                        <h1 class="text-3xl font-bold">Couple 20</h1>
+                        <p class="text-base font-medium">Coupon Code</p>
+                    </div>
+                </div>
+                <!-- 20% off coupon end -->
+
+            </div>
+            <!-- coupon part end -->
+
+            <!-- button -->
+            <button
+                class="btn mt-16 text-nav-bus border-[1px] border-nav-bus-border px-6 bg-white font-extrabold text-base">See
+                All Offers</button>
+        </section>
+        <!-- Best offer for you section end -->
+
+
+        <!-- Assignment main part start-->
+        <section id="main-part"
+            class="bg-main-part h-[1930px] border-t-2 border-solid border-nav-bus rounded-tl-[88px] rounded-tr-[88px]">
+
+            <!-- site title  -->
+            <div class="text-center mt-28 space-y-4">
+                <h1 class="font-bold text-[40px] text-button-text">P.H Paribahan</h1>
+                <p class="inter-font font-normal text-lg">Explore scenic routes and comfortable travel with P.H Paribahan. <br> Book your ticket now and embark on your next adventure.</p>
+            </div>
+
+            <!-- 3d card start-->
+            <div class="flex gap-12 mt-28 justify-center">
+
+                <!-- left card -->
+                <div class="card w-[385px] h-[415px] shadow-xl">
+
+                    <div class="flex justify-center mt-12 mb-8">
+                        <img src="{% static 'image/seat-logo.png' %}" alt="Seat logo">
+                    </div>
+
+                    <div class="card-body items-center text-center">
+                        <h1 class="text-xl font-bold text-button-text">Check Seat Availavility</h1>
+                        <p class="text-lg inter-font font-normal">Check seat availability for your preferred route and plan
+                            your journey with ease.</p>
+                        <div class="card-actions justify-center">
+                            <button
+                                class="btn bg-nav-bus border-none px-6 font-bold text-[18px] text-button-text">Check
+                                Availability</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- middle card -->
+                <div class="card w-[385px] h-[515px] bg-nav-bus shadow-xl">
+
+                    <div class="flex justify-center mt-12 mb-8">
+                        <img src="{% static 'image/ticket-logo.png' %}" alt="Ticket logo">
+                    </div>
+
+                    <div class="card-body items-center text-center">
+                        <h1 class="text-xl font-bold text-white">Buy Tickets</h1>
+                        <p class="text-lg text-white">Secure your travel plans by purchasing tickets in advance and enjoy a
+                            hassle-free journey.</p>
+                        <div class="card-actions justify-center">
+                            <button
+                                class="btn bg-button-text border-none px-6 font-bold text-[18px] text-nav-bus">Buy
+                                Tickets</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- right card -->
+                <div class="card w-[385px] h-[415px] shadow-xl">
+
+                    <div class="flex justify-center mt-12 mb-8">
+                        <img src="{% static 'image/destination-logo.png' %}" alt="Destination logo">
+                    </div>
+
+                    <div class="card-body items-center text-center">
+                        <h1 class="text-xl font-bold text-button-text">Our Destinations</h1>
+                        <p class="text-lg inter-font font-normal">Discover new destinations and plan your journey with P.H
+                            Paribahan's extensive network.</p>
+                        <div class="card-actions justify-center">
+                            <button
+                                class="btn bg-nav-bus border-none px-6 font-bold text-[18px] text-button-text">Explore
+                                Destinations</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 3d card end -->
+
+
+            <!-- our services start-->
+            <div class="text-center mt-28 space-y-4">
+                <h1 class="font-bold text-[40px] text-button-text">Our Services</h1>
+                <p class="inter-font font-normal text-lg">Experience the best of travel with our top-notch services. <br>
+                    Discover our offerings and make the most of your journey.</p>
+            </div>
+
+            <!-- Services card part start-->
+            <div class="flex gap-7 mt-14 justify-center">
+
+                <!-- First card start -->
+                <div class="card w-[364px] h-[420px] bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="{% static 'image/safety.png' %}" alt="Shoes" class="rounded-xl">
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-xl font-bold text-button-text">Safety First</h2>
+                        <p class="text-lg inter-font font-normal">Your safety is our priority. We ensure a secure journey with
+                            our well-maintained buses and trained staff.</p>
+                    </div>
+                </div>
+                <!-- First card end -->
+
+                <!-- second card start-->
+                <div class="card w-[364px] h-[420px] bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="{% static 'image/customer-support.png' %}" alt="Customer Support" class="rounded-xl">
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-xl font-bold text-button-text">24/7 Customer Support</h2>
+                        <p class="text-lg inter-font font-normal">Our customer support team is available around the clock to
+                            assist you with your travel needs and queries.</p>
+                    </div>
+                </div>
+                <!-- second card end-->
+
+                <!-- third card start-->
+                <div class="card w-[364px] h-[420px] bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="{% static 'image/comfort.png' %}" alt="Comfort" class="rounded-xl">
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-xl font-bold text-button-text">Comfortable Journey</h2>
+                        <p class="text-lg inter-font font-normal">Experience a comfortable journey with our spacious seating
+                            and modern amenities, designed for your comfort.</p>
+                    </div>
+                </div>
+                <!-- third card end-->
+
+            </div>
+            <!-- Services card part end-->
+
+            <!-- pricing part start -->
+            <div class="flex mt-28 gap-28 items-center justify-center">
+
+                <!-- left part -->
+                <div class="space-y-5">
+                    <h1 class="font-bold text-[40px] text-button-text">Pricing</h1>
+                    <p class="inter-font font-normal text-lg">Choose the package that suits your travel needs. <br> Our
+                        pricing plans are designed to offer flexibility and value.</p>
+
+                    <!-- plans  -->
+                    <div class="space-y-4 mt-12">
+                        <div class="flex items-center gap-4">
+                            <div class="h-[9px] w-[9px] bg-dottet-border rounded-full"></div>
+                            <p class="text-lg font-medium text-button-text">Flexible payment options</p>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="h-[9px] w-[9px] bg-dottet-border rounded-full"></div>
+                            <p class="text-lg font-medium text-button-text">Affordable pricing for all budgets</p>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="h-[9px] w-[9px] bg-dottet-border rounded-full"></div>
+                            <p class="text-lg font-medium text-button-text">Special discounts for frequent travelers</p>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="h-[9px] w-[9px] bg-dottet-border rounded-full"></div>
+                            <p class="text-lg font-medium text-button-text">Exclusive deals for group bookings</p>
+                        </div>
+
+                        <button
+                            class="btn mt-7 text-nav-bus border-[1px] border-nav-bus-border px-6 bg-white font-extrabold text-base">See
+                            All Pricing</button>
+                    </div>
+                </div>
+
+                <!-- right part -->
+                <div>
+                    <img src="{% static 'image/pricing.png' %}" alt="Pricing Image">
+                </div>
+            </div>
+            <!-- pricing part end -->
+
+        </section>
+        <!-- Assignment main part end-->
+    </main>
+    <!-- Main section end -->
+
+
+    <!-- footer section start -->
+    <footer class="mt-28 mb-16 text-center">
+        <h1 class="font-bold text-[40px] text-button-text">Plan Your Journey Today</h1>
+        <p class="inter-font font-normal text-lg">Book your tickets with P.H Paribahan and embark on a memorable travel
+            experience. <br> Enjoy seamless travel with our reliable bus services and exceptional customer support.</p>
+
+        <button
+            class="btn mt-7 text-nav-bus border-[1px] border-nav-bus-border px-6 bg-white font-extrabold text-base">Buy
+            Tickets</button>
+    </footer>
+    <!-- footer section end -->
+
+    <script>
+        function scrol() {
+            document.getElementById('main-part').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+
+</html>
